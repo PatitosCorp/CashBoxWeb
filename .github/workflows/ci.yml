@@ -42,6 +42,6 @@ jobs:
             echo "SKIP=1" >> "$GITHUB_ENV"
           fi
       - if: env.SKIP != '1'
-        run: supabase link --project-ref "$PROJECT_REF" --password "$DB_PASSWORD"
+        run: supabase link --project-ref "$PROJECT_REF"
       - if: env.SKIP != '1'
-        run: supabase db push --password "$DB_PASSWORD"
+        run: supabase db push --remote --password "$DB_PASSWORD"
