@@ -3,6 +3,14 @@
 Registro de cambios grandes (arquitectura, dependencias, pantallas, modelo de datos).
 Lo más reciente va arriba.
 
+## 2026-11-15 - Ambientes y CI
+
+- Tres ambientes: local (Docker), staging (rama `staging`) y prod (`main`), cada uno con su proyecto de Supabase.
+- GitHub Action: lint, tests y build en cada push; aplica migraciones a Supabase según la rama.
+- `vercel.json` con rewrite para las rutas de la SPA.
+- Supabase local con Docker verificado: las migraciones aplican en Postgres real (15 tablas, 29 políticas, 15 funciones) y el login con código de prueba, `create_store` y RLS responden bien.
+- Node 22 requerido (`.nvmrc`, `engines`).
+
 ## 2026-11-15 - Proyecto inicial
 
 - PWA con Vite + React + TypeScript (`vite-plugin-pwa`, actualización con aviso, solo cachea la app, no los datos).

@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  # Applies supabase/migrations to the matching project. Migrations only move forward:
+  # never edit an applied one, add a new file.
+  migrate:
+    needs: check
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PROJECT_REF: ${{ github.ref_name == 'main' && secrets.PROD_PROJECT_REF || secrets.STAGING_PROJECT_REF }}
+      DB_PASSWORD: ${{ github.ref_name == 'main' && secrets.PROD_DB_PASSWORD || secrets.STAGING_DB_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - name: Skip when secrets are not configured yet
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ] || [ -z "$PROJECT_REF" ] || [ -z "$DB_PASSWORD" ]; then
+            echo "::warning::Supabase secrets missing for ${{ github.ref_name }}; migrations not applied"
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+      - if: env.SKIP != '1'
+        run: supabase link --project-ref "$PROJECT_REF" --password "$DB_PASSWORD"
+      - if: env.SKIP != '1'
+        run: supabase db push --password "$DB_PASSWORD"
