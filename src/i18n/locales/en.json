@@ -1,0 +1,52 @@
+{
+  "common": {
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "logout": "Log out",
+    "loading": "Loading…"
+  },
+  "errors": {
+    "required": "Required field",
+    "invalidPhone": "Invalid phone number",
+    "invalidCode": "Invalid or expired code",
+    "generic": "Something went wrong, try again"
+  },
+  "login": {
+    "title": "Welcome to CashBox",
+    "subtitle": "Sign in with your phone number",
+    "phone": "Phone",
+    "phonePlaceholder": "55 1234 5678",
+    "sendCode": "Send code",
+    "code": "Code",
+    "codeSentTo": "We sent an SMS code to {{phone}}",
+    "verify": "Sign in",
+    "changePhone": "Change number"
+  },
+  "store": {
+    "createTitle": "Create your business",
+    "createSubtitle": "If you were invited as an employee, ask the admin to register your number.",
+    "name": "Business name",
+    "namePlaceholder": "e.g. Lupita's Groceries",
+    "create": "Create business"
+  },
+  "menu": {
+    "sales": "Sales",
+    "history": "History",
+    "products": "Products",
+    "categories": "Categories",
+    "customers": "Customers",
+    "cash": "Cash register",
+    "employees": "Employees",
+    "roles": "Roles",
+    "settings": "Settings"
+  },
+  "home": {
+    "comingSoon": "This section is built in the next stage."
+  },
+  "pwa": {
+    "update": "A new version is available",
+    "reload": "Update"
+  }
+}

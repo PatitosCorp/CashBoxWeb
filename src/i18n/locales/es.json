@@ -1,0 +1,52 @@
+{
+  "common": {
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "back": "Volver",
+    "logout": "Cerrar sesión",
+    "loading": "Cargando…"
+  },
+  "errors": {
+    "required": "Campo obligatorio",
+    "invalidPhone": "Número de teléfono inválido",
+    "invalidCode": "Código inválido o vencido",
+    "generic": "Ocurrió un error, intenta de nuevo"
+  },
+  "login": {
+    "title": "Bienvenido a CashBox",
+    "subtitle": "Entra con tu número de teléfono",
+    "phone": "Teléfono",
+    "phonePlaceholder": "55 1234 5678",
+    "sendCode": "Enviar código",
+    "code": "Código",
+    "codeSentTo": "Enviamos un código por SMS a {{phone}}",
+    "verify": "Entrar",
+    "changePhone": "Cambiar número"
+  },
+  "store": {
+    "createTitle": "Crea tu negocio",
+    "createSubtitle": "Si te invitaron como empleado, pide al administrador que registre tu número.",
+    "name": "Nombre del negocio",
+    "namePlaceholder": "Ej. Abarrotes Lupita",
+    "create": "Crear negocio"
+  },
+  "menu": {
+    "sales": "Venta",
+    "history": "Historial",
+    "products": "Productos",
+    "categories": "Categorías",
+    "customers": "Clientes",
+    "cash": "Caja",
+    "employees": "Empleados",
+    "roles": "Roles",
+    "settings": "Ajustes"
+  },
+  "home": {
+    "comingSoon": "Esta sección se construye en la siguiente etapa."
+  },
+  "pwa": {
+    "update": "Hay una nueva versión disponible",
+    "reload": "Actualizar"
+  }
+}
