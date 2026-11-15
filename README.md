@@ -1,5 +1,7 @@
 # CashBox Web
 
+> ¿Nuevo en el proyecto? Empieza por [docs/ONBOARDING.md](docs/ONBOARDING.md).
+
 Punto de venta PWA para tiendas con administrador y empleados. Basado en CashBox (React Native).
 
 ## Stack
