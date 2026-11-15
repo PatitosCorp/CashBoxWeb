@@ -44,4 +44,4 @@ jobs:
       - if: env.SKIP != '1'
         run: supabase link --project-ref "$PROJECT_REF"
       - if: env.SKIP != '1'
-        run: supabase db push --remote --password "$DB_PASSWORD"
+        run: supabase db push --remote --yes --password "$DB_PASSWORD"
